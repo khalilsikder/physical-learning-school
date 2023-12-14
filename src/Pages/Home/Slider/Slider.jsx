@@ -1,7 +1,7 @@
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 
-import slider1 from '../../../assets/jogging.jpg'
+import slider1 from '../../../assets/class1.jpg'
 import slider2 from '../../../assets/walk.jpg'
 
 const Slider = () => {
