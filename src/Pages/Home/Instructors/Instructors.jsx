@@ -1,3 +1,5 @@
+
+import { Helmet } from 'react-helmet-async'
 import img from '../../../assets/phyIns.jpg'
 import img2 from '../../../assets/phyins2.jpg'
 import img3 from '../../../assets/phyins3.jpg'
@@ -14,6 +16,9 @@ const Instructors = () => {
              heading={'Instructors'}
             > </SectionTitle>
             <div className='grid md:grid-cols-3'>
+            <Helmet>
+                <title>physical ||  </title>
+            </Helmet>
                 <div className="card w-96 bg-base-100 shadow-xl">
                     <figure className="px-10 pt-10">
                         <img src={img} alt="Shoes" className="rounded-xl" />

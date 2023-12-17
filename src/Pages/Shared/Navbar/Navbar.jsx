@@ -1,9 +1,10 @@
+import { Link } from "react-router-dom";
 
 
 const Navbar = () => {
     const navItems = <>
-        <li><a>Home</a></li>
-        <li><a>Instructors</a></li>
+        <li><Link to='/'>Home</Link></li>
+        <li><Link to='/instructors'>Instructors</Link></li>
         <li><a>Classes</a></li>
         <li><a>Dashboard</a></li>
     </>
