@@ -1,11 +1,15 @@
 
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 
 const Login = () => {
-    const {signIn} = useContext(AuthContext)
+    const {signIn} = useContext(AuthContext);
+    const navigate = useNavigate()
+    const location = useLocation()
+    const from = location.state?.from?.pathname || '/';
     const handleLogin = event =>{
         event.preventDefault();
         const form = event.target;
@@ -16,10 +20,15 @@ const Login = () => {
         .then(result =>{
             const user = result.user;
             console.log(user);
+            navigate(from,{replace:true});
         })
     }
     return (
-        <div className="hero min-h-screen bg-white-700">
+        <>
+        <Helmet>
+        <title>physical || Login </title>
+      </Helmet>
+      <div className="hero min-h-screen bg-white-700">
                 <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-blue-700">
                 <h2 className="text-center text-2xl text-white mt-6">Please login</h2>
                     <form onSubmit={handleLogin} className="card-body">
@@ -39,12 +48,13 @@ const Login = () => {
                             </label>
                         </div>
                         <div className="form-control mt-6 ">
-                            <button className="btn btn-primary">Login</button>
+                            <input className="btn btn-primary" type="submit" value="login" />
                         </div>
                     </form>
-                    <p><small>Donot have an account?<Link to='/signup'>SignUp</Link></small></p>
+                    <p className="text-center mb-6 text-lg"><small>Donot have an account?<Link className="text-red-600" to='/signup'>SignUp</Link></small></p>
                 </div>
             </div>
+        </>
     );
 };
 

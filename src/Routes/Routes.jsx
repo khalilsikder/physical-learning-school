@@ -6,6 +6,8 @@ import Home from "../Pages/Home/Home/Home";
 import Instructors from "../Pages/Home/Instructors/Instructors";
 import Login from "../Pages/Login/Login";
 import SignUp from "../Pages/SignUp/SignUp";
+import PrivateRoute from "./PrivateRoute";
+import Dashboard from "../Pages/Dashboard/Dashboard";
 
 
 
@@ -29,6 +31,10 @@ import SignUp from "../Pages/SignUp/SignUp";
         {
           path:'SignUp',
           element:<SignUp></SignUp>
+        },
+        {
+          path:'dashboard',
+          element:<PrivateRoute><Dashboard></Dashboard></PrivateRoute>
         }
       ]
     },
