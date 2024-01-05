@@ -3,9 +3,14 @@ import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
+import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
+import { FaGoogle } from "react-icons/fa";
+import { app } from "../../firebase/firebase.config";
 
 
 const Login = () => {
+    const auth = getAuth(app);
+    const googleprovider = new GoogleAuthProvider()
     const {signIn} = useContext(AuthContext);
     const navigate = useNavigate()
     const location = useLocation()
@@ -21,6 +26,16 @@ const Login = () => {
             const user = result.user;
             console.log(user);
             navigate(from,{replace:true});
+        })
+    }
+    const handleGoogleSignIn = () =>{
+        signInWithPopup(auth,googleprovider)
+        .then (result=>{
+            const user = result.user;
+            console.log(user);
+        })
+        .catch(error=>{
+            console.log(error);
         })
     }
     return (
@@ -50,8 +65,14 @@ const Login = () => {
                         <div className="form-control mt-6 ">
                             <input className="btn btn-primary" type="submit" value="login" />
                         </div>
+                        <p className="text-center">-------OR-------</p>
+                        <div className="flex text-center m-auto">
+                             <p>SignIn With</p> 
+                            <FaGoogle className="text-purple-900 text-2xl ml-4" onClick={handleGoogleSignIn} />
+                        </div>
+                         
                     </form>
-                    <p className="text-center mb-6 text-lg"><small>Donot have an account?<Link className="text-red-600" to='/signup'>SignUp</Link></small></p>
+                    <p className="text-center mb-6 text-lg"><small className="text-white">Donot have an account?<Link className="text-purple-900 text-2xl ml-4" to='/signup'>SignUp</Link></small></p>
                 </div>
             </div>
         </>

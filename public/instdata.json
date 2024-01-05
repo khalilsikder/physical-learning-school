@@ -1,0 +1,57 @@
+[
+    {
+    "id":1,
+    "image": "https://i.ibb.co/X38WTcy/images-3.jpg",
+    "name": "John Doe",
+    "instructorName":"Mr arif khan",
+    "email": "arifkhan@gmail.com",
+    "availableSeats": 11,
+    "price": 300  
+  },
+    {
+    "id":2,
+    "image": "https://i.ibb.co/gmzN90R/gym-t3.jpg",
+    "name": "zid ",
+    "instructorName":"Arman",
+    "email": "kima@gmail.com",
+    "availableSeats": 12,
+    "price": 240 
+  },
+    {
+    "id":3,
+    "image": "https://i.ibb.co/RpnDxSy/gym-t5.jpg",
+    "name": " Doe",
+    "instructorName":"Mr pappu",
+    "email": "aria@gmail.com",
+    "availableSeats": 9,
+    "price": 560  
+  },
+    {
+    "id":4,
+    "image": "https://i.ibb.co/92gc6D0/phyins6.jpg",
+    "name": "John Joy",
+    "instructorName":"Mr zin",
+    "email": "zina@gmail.com",
+    "availableSeats": 16,
+    "price": 420 
+  },
+    {
+    "id":5,
+    "image": "https://i.ibb.co/wpJzdKc/gym-t1.jpg",
+    "name": "lukia",
+    "instructorName":"Alia burt",
+    "email": "alia@gmail.com",
+    "availableSeats": 15,
+    "price": 180  
+  },
+    {
+    "id":6,
+    "image": "https://i.ibb.co/cgtK2CY/phyins4.jpg",
+    "name": "khan",
+    "instructorName":"Faisal khan",
+    "email": "Khan@gmail.com",
+    "availableSeats": 18,
+    "price": 400  
+  }
+]
+  
