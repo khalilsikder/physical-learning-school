@@ -1,16 +1,17 @@
-import { useEffect, useState } from "react";
 import InstInfo from "../InstInfo/InstInfo";
 import { Helmet } from "react-helmet-async";
+import useInstructors from "../../hooks/useInstructors";
 
 
 
 const AllInstructors = () => {
-    const [instructors, setInstructors] = useState([])
-    useEffect(() => {
-        fetch('instdata.json')
-            .then(res => res.json())
-            .then(data => setInstructors(data))
-    }, [])
+    const [instructors] = useInstructors()
+    // const [instructors, setInstructors] = useState([])
+    // useEffect(() => {
+    //     fetch('instdata.json')
+    //         .then(res => res.json())
+    //         .then(data => setInstructors(data))
+    // }, [])
     return (
         <>
             <Helmet>

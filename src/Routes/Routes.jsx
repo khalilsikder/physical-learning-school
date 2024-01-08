@@ -9,6 +9,7 @@ import SignUp from "../Pages/SignUp/SignUp";
 import Dashboard from "../Layout/Dashboard";
 import MyPhysicalClass from "../Pages/Dashboard/MyPhysicalClass/MyPhysicalClass";
 import AllInstructors from "../Pages/AllInstructors/AllInstructors";
+import InstructorInfo from "../Pages/InstructorInfo/InstructorInfo";
 
 
 
@@ -28,6 +29,10 @@ import AllInstructors from "../Pages/AllInstructors/AllInstructors";
         {
           path: 'allinstructors',
           element:<AllInstructors></AllInstructors>
+        },
+        {
+         path: 'instructorInfo',
+         element:<InstructorInfo></InstructorInfo>
         },
         {
           path:'login',
