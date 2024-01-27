@@ -7,16 +7,9 @@ import img3 from '../../../assets/walk.jpg'
 import img4 from '../../../assets/class6.jpg'
 import img5 from '../../../assets/class4.jpg'
 import img6 from '../../../assets/class5.jpg'
-import SectionTitle from '../../../component/SectionTitle/SectionTitle';
 
 const PopularClass = () => {
     return (
-        <section>
-            <SectionTitle
-            subheading={'From 3pm to 5pm'}
-            heading={'Physical exercise class'}
-            >   
-            </SectionTitle>
             <Swiper className='mt-5 mb-5'
                 spaceBetween={10}
                 slidesPerView={5}
@@ -42,7 +35,6 @@ const PopularClass = () => {
                     <img src={img6} alt="" />
                 </SwiperSlide>
             </Swiper>
-        </section>
     );
 };
 

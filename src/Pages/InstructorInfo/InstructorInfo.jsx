@@ -1,5 +1,4 @@
 import useInstructors from "../../hooks/useInstructors";
-import InstInfo from "../InstInfo/InstInfo";
 import InstructorsClass from "../InstructorClass/InstructorsClass";
 
 

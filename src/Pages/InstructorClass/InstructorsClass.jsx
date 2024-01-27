@@ -9,7 +9,7 @@ const InstructorsClass = ({ instructor }) => {
             <p className="m-2">InstructorName: {instructorName}</p>
             <p className="m-2">AvailableSeats: {availableSeats}</p>
             <p className="m-2">Price: ${price}</p>
-            <button className="btn btn-primary">Select</button>
+            <button className="btn btn-active btn-neutral">Select</button>
         </div>
     );
 };

@@ -6,8 +6,6 @@ import Home from "../Pages/Home/Home/Home";
 import Instructors from "../Pages/Home/Instructors/Instructors";
 import Login from "../Pages/Login/Login";
 import SignUp from "../Pages/SignUp/SignUp";
-import Dashboard from "../Layout/Dashboard";
-import MyPhysicalClass from "../Pages/Dashboard/MyPhysicalClass/MyPhysicalClass";
 import AllInstructors from "../Pages/AllInstructors/AllInstructors";
 import InstructorInfo from "../Pages/InstructorInfo/InstructorInfo";
 
@@ -43,15 +41,4 @@ import InstructorInfo from "../Pages/InstructorInfo/InstructorInfo";
           element:<SignUp></SignUp>
         }
       ]
-    },
-     {
-      path:'dashboard',
-      element:<Dashboard></Dashboard>,
-      children:[
-        {
-          path:'myphysicalclass',
-          element:<MyPhysicalClass></MyPhysicalClass>
-        }
-      ]
-     }
-  ]);
+    }])
