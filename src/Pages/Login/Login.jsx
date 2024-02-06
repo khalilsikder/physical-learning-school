@@ -1,20 +1,23 @@
 
-import { useContext } from "react";
+import { useContext, useRef } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import toast from 'react-hot-toast'
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { FaGoogle } from "react-icons/fa";
 import Swal from "sweetalert2";
-import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
+import { getAuth } from "firebase/auth";
 import { app } from "../../firebase/firebase.config";
 
 
 const Login = () => {
     const auth = getAuth(app)
-    const provider = new GoogleAuthProvider()
+    const emailRef = useRef()
     const navigate = useNavigate()
-    const {signIn,logOut} = useContext(AuthContext);
+    const location = useLocation()
+    const from = location.state?.from?.pathname || '/'
+    const {signIn,logOut,setloading,resetPassword,signInWithGoogle,} = useContext(AuthContext);
+
     const handleLogin = event =>{
         event.preventDefault();
         const form = event.target;
@@ -27,7 +30,7 @@ const Login = () => {
             const user = result.user;
             console.log(user);
             if(user?.email){
-                navigate('/')
+                navigate(from, {replace: true})
             }
             Swal.fire({
                 title: "User login successfull",
@@ -48,17 +51,29 @@ const Login = () => {
               });
         })
     }
+
+    const handleResetpass = () => {
+        const email = emailRef.current.value 
+       resetPassword(email)
+        .then(()=> {
+            setloading(false)
+        })
+        .catch(error =>{
+            console.log(error.message);
+        })
+    }
+
     logOut()
     .then(() => {
       })
     .catch((error) =>console.log(error));
 
     const handleGoogleSignIn = () =>{
-        signInWithPopup(auth,provider)
+        signInWithGoogle(auth)
         .then (result=>{
             const user = result.user;
             console.log(user);       
-                navigate('/')
+            navigate(from, {replace: true})
         })
         .catch(error=>{
             console.log(error.message);
@@ -78,7 +93,7 @@ const Login = () => {
                             <label className="label">
                                 <span className="label-text">Email</span>
                             </label>
-                            <input type="email" name = 'email' placeholder="email" className="input input-bordered" required />
+                            <input ref={emailRef} type="email" name = 'email' placeholder="email" className="input input-bordered" required />
                         </div>
                         <div className="form-control">
                             <label className="label">
@@ -86,7 +101,7 @@ const Login = () => {
                             </label>
                             <input type="password" name = 'password' placeholder="password" className="input input-bordered" required />
                             <label className="label">
-                                <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+                                <a onClick={handleResetpass} href="#" className="label-text-alt link link-hover">Forgot password?</a>
                             </label>
                         </div>
                         <div className="form-control mt-6 ">

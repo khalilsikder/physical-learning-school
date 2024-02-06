@@ -6,7 +6,7 @@ import img4 from '../../../assets/phyins4.jpg'
 import img5 from '../../../assets/phyins5.jpg'
 import img6 from '../../../assets/phyins6.jpg'
 
-const Instructors = () => {
+const PopularInstructors = () => {
     return (
         <section>
             <div className='grid md:grid-cols-3'>
@@ -89,4 +89,4 @@ const Instructors = () => {
     );
 };
 
-export default Instructors;
+export default PopularInstructors;

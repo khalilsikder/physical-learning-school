@@ -1,7 +1,7 @@
 
 
-const InstInfo = ({instructor}) => {
-    const {image,name,email} = instructor;
+const SingleCart = ({cart}) => {
+    const {image,name,email} = cart;
     return (
         <div className="mt-24 mb-8 gap-8 mx-auto text-center">
             <img src={image} alt="" />
@@ -11,4 +11,4 @@ const InstInfo = ({instructor}) => {
     );
 };
 
-export default InstInfo;
+export default SingleCart;

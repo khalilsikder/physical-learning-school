@@ -2,12 +2,15 @@ import {
     createBrowserRouter,
   } from "react-router-dom";
 import Main from "../Layout/Main";
-import Home from "../Pages/Home/Home/Home";
-import Instructors from "../Pages/Home/Instructors/Instructors";
 import Login from "../Pages/Login/Login";
 import SignUp from "../Pages/SignUp/SignUp";
-import AllInstructors from "../Pages/AllInstructors/AllInstructors";
 import InstructorInfo from "../Pages/InstructorInfo/InstructorInfo";
+import Dashboard from "../Layout/Dashboard";
+import StudentCart from "../Pages/Dashboard/StudentCart";
+import Notfound from "../Pages/Notfound/Notfound";
+import PopularInstructors from "../Pages/Home/PopularInstructors/PopularInstructors";
+import Home from "../Pages/Home/Home/Home";
+import Instructors from "../Pages/Instructors/Instructors";
 
 
 
@@ -16,17 +19,17 @@ import InstructorInfo from "../Pages/InstructorInfo/InstructorInfo";
       path: "/",
       element: <Main></Main>,
       children:[
+       {
+        path:'/',
+        element:<Home></Home>,
+       },
         {
-            path: '/',
-            element: <Home></Home>,
+          path: 'popularinstructors',
+          element:<PopularInstructors></PopularInstructors>
         },
         {
           path: 'instructors',
           element:<Instructors></Instructors>
-        },
-        {
-          path: 'allinstructors',
-          element:<AllInstructors></AllInstructors>
         },
         {
          path: 'instructorInfo',
@@ -39,6 +42,21 @@ import InstructorInfo from "../Pages/InstructorInfo/InstructorInfo";
         {
           path:'SignUp',
           element:<SignUp></SignUp>
-        }
+        },
+        {
+          path:'*',
+          element:<Notfound></Notfound>
+         },
       ]
-    }])
+    },
+    {
+    path:'dashboard',
+    element:<Dashboard></Dashboard>,
+    children:[
+      {
+       path: 'studentcart',
+       element:<StudentCart></StudentCart>
+      }
+    ]
+    }
+  ])

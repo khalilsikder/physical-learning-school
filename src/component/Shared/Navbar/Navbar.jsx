@@ -1,7 +1,6 @@
 
 import { Link } from "react-router-dom";
 import Container from "../Container";
-import Logo from "./Logo";
 import { useContext } from "react";
 import { AuthContext } from "../../../Providers/AuthProvider";
 
@@ -21,13 +20,15 @@ const Navbar = () => {
             <div className="py-4 border-b-[1px]">
              <Container>
                 <div className="flex flex-row items-center justify-between">
-                    <div><Logo></Logo></div>
-                    <div>
-                        <p>Instructors</p>
+                    <div><Link to='/'>Physical learning</Link></div>
+                    <div className="flex gap-8 ml-40">
+                        <p><Link to='/'>Home</Link></p>
+                        <p><Link to='/instructors'>Instructors</Link></p>
+                        <p><Link to='/instructorinfo'>Classes</Link></p>
                     </div>
                     <div className="flex flex-row  items-center">
                     { user? <>
-                    <Link className="mr-80" to='/dashboard'>Dashboard</Link>
+                    <Link className="mr-40" to='/dashboard/studentcart'>Dashboard</Link>
                     <span><img src={user.photoURL} alt="" /></span>
                     <button onClick={handleLogOut} className="btn btn-ghost">LogOut</button>
                     </> : <>

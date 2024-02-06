@@ -1,15 +1,15 @@
-import useInstructors from "../../hooks/useInstructors";
+import useCarts from "../../hooks/useCarts";
 import InstructorsClass from "../InstructorClass/InstructorsClass";
 
 
 const InstructorInfo = () => {
-    const [instructor] = useInstructors()
+    const [carts] = useCarts()
     return (
         <div>
             <div className="grid md:grid-cols-3">
                 {
-                    instructor.map((instructor) => <InstructorsClass
-                        key={instructor.id} instructor={instructor}
+                    carts.map((cart) => <InstructorsClass
+                        key={cart.id} cart={cart}
                     ></InstructorsClass>)
                 }
             </div> 

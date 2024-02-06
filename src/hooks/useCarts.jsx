@@ -1,17 +1,17 @@
 import { useEffect, useState } from "react";
 
-const useInstructors = () =>{
-    const [instructors, setInstructors] = useState([])
+const useCarts = () =>{
+    const [carts, setCarts] = useState([])
     const [loading,setLoading] = useState(true)
     useEffect(() => {
-        fetch('http://localhost:5000/instructor')
+        fetch('instdata.json')
             .then(res => res.json())
             .then(data => {
-                setInstructors(data);
+                setCarts(data);
                 setLoading(false);
             })
     }, [])
-        return [instructors,loading];
+        return [carts,loading];
 }
 
-export default useInstructors;
+export default useCarts;
