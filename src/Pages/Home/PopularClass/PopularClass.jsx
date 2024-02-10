@@ -7,10 +7,16 @@ import img3 from '../../../assets/walk.jpg'
 import img4 from '../../../assets/class6.jpg'
 import img5 from '../../../assets/class4.jpg'
 import img6 from '../../../assets/class5.jpg'
+import SectionTitle from '../../../component/Shared/SectionTitle/SectionTitle';
 
 const PopularClass = () => {
     return (
-            <Swiper className='mt-5 mb-5'
+            <section>
+                <SectionTitle
+                subheading='----class----'
+                heading='Popular classes'
+                ></SectionTitle>
+                <Swiper className='mt-5 mb-5'
                 spaceBetween={10}
                 slidesPerView={5}
                 onSlideChange={() => console.log('slide change')}
@@ -35,6 +41,7 @@ const PopularClass = () => {
                     <img src={img6} alt="" />
                 </SwiperSlide>
             </Swiper>
+            </section>
     );
 };
 

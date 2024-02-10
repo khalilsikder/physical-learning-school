@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 const InstructorsClass = ({ cart }) => {
     const { image, name, instructorName, availableSeats, price } = cart
@@ -12,7 +13,7 @@ const InstructorsClass = ({ cart }) => {
             {
                 
             }
-            <button className="btn btn-active btn-neutral">Select</button>
+            <Link to='/login'><button className="btn btn-active btn-neutral">Select</button></Link>
         </div>
     );
 };
