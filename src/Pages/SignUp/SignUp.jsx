@@ -14,8 +14,6 @@ const SignUp = () => {
       
 
     const onSubmit = (data) => {
-        console.log(data);
-
           createUser(data.email,data.password)
           .then(result =>{
             const loggedUser = result.user;
@@ -23,16 +21,29 @@ const SignUp = () => {
             
             updateUserProfile(data.name,data.photoURL)
             .then(()=>{
-                console.log('update profile');
-                reset()
-                Swal.fire({
-                    position: "top-end",
-                    icon: "success",
-                    title: "user profile update successfull",
-                    showConfirmButton: false,
-                    timer: 1500
-                  });
-                  navigate('/login')
+                const saveUser = {name:data.name,email:data.email}
+                fetch('http://localhost:5000/users',{
+                    method:'POST',
+                    headers:{
+                        'content-type':'application/json'
+                    },
+                    body:JSON.stringify(saveUser)
+                })
+                .then(res =>res.json())
+                .then(data =>{
+                    if(data.insertedId){
+                        reset()
+                        Swal.fire({
+                            position: "top-end",
+                            icon: "success",
+                            title: "user profile update successfull",
+                            showConfirmButton: false,
+                            timer: 1500
+                          });
+                          navigate('/login')
+                    }
+                })
+                
             })
            .catch(error => console.log(error))
           })

@@ -11,6 +11,8 @@ import Notfound from "../Pages/Notfound/Notfound";
 import PopularInstructors from "../Pages/Home/PopularInstructors/PopularInstructors";
 import Home from "../Pages/Home/Home/Home";
 import Instructors from "../Pages/Instructors/Instructors";
+import PrivateRoute from "./PrivateRoute";
+import Allusers from "../Pages/Dashboard/Allusers/Allusers";
 
 
 
@@ -56,6 +58,10 @@ import Instructors from "../Pages/Instructors/Instructors";
       {
        path: 'studentcart',
        element:<StudentCart></StudentCart>
+      },
+      {
+       path: 'allusers',
+       element:<Allusers></Allusers>
       }
     ]
     }
