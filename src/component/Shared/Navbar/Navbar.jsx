@@ -24,7 +24,7 @@ const Navbar = () => {
                     <div className="flex gap-8 ml-40">
                         <p><Link to='/'>Home</Link></p>
                         <p><Link to='/instructors'>Instructors</Link></p>
-                        <p><Link to='/instructorinfo'>Classes</Link></p>
+                        <p><Link to='/instructorsclass'>Classes</Link></p>
                     </div>
                     <div className="flex flex-row  items-center">
                     { user? <>

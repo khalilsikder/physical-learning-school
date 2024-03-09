@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const InstructorsClass = ({ cart }) => {
+const InstructorItem = ({ cart }) => {
     const { image, name, instructorName, availableSeats, price } = cart
     return (
 
@@ -18,4 +18,4 @@ const InstructorsClass = ({ cart }) => {
     );
 };
 
-export default InstructorsClass;
+export default InstructorItem;

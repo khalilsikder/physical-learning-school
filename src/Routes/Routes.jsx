@@ -4,15 +4,15 @@ import {
 import Main from "../Layout/Main";
 import Login from "../Pages/Login/Login";
 import SignUp from "../Pages/SignUp/SignUp";
-import InstructorInfo from "../Pages/InstructorInfo/InstructorInfo";
 import Dashboard from "../Layout/Dashboard";
-import StudentCart from "../Pages/Dashboard/StudentCart";
 import Notfound from "../Pages/Notfound/Notfound";
 import PopularInstructors from "../Pages/Home/PopularInstructors/PopularInstructors";
 import Home from "../Pages/Home/Home/Home";
 import Instructors from "../Pages/Instructors/Instructors";
-import PrivateRoute from "./PrivateRoute";
+import InstructorsClass from "../Pages/InstructorsClass/InstructorsClass";
+import StudentCart from "../Pages/Dashboard/StudentCart";
 import Allusers from "../Pages/Dashboard/Allusers/Allusers";
+
 
 
 
@@ -34,8 +34,8 @@ import Allusers from "../Pages/Dashboard/Allusers/Allusers";
           element:<Instructors></Instructors>
         },
         {
-         path: 'instructorInfo',
-         element:<InstructorInfo></InstructorInfo>
+         path: 'instructorsclass',
+         element:<InstructorsClass></InstructorsClass>
         },
         {
           path:'login',
@@ -56,12 +56,12 @@ import Allusers from "../Pages/Dashboard/Allusers/Allusers";
     element:<Dashboard></Dashboard>,
     children:[
       {
-       path: 'studentcart',
+        path: 'studentcart',
        element:<StudentCart></StudentCart>
       },
       {
-       path: 'allusers',
-       element:<Allusers></Allusers>
+        path: 'allusers',
+       element:<Allusers></Allusers>,
       }
     ]
     }

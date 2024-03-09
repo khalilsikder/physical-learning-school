@@ -4,10 +4,11 @@ import { useQuery } from '@tanstack/react-query'
 
 const useTablecarts = () => {
 const {user} = useContext(AuthContext);
+console.log('user table',user);
 const { refetch, data:cart = [] } = useQuery({
     queryKey: ['carts',user?.email],
     queryFn: async () =>{
-        const res = await fetch(`http://localhost:5000/carts?email=$(cart.email)`)
+        const res = await fetch(`http://localhost:5000/carts?email=${user.email}`)
         return res.json()
     },
   })
