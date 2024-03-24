@@ -23,7 +23,8 @@ const Dashboard = () => {
         isAdmin ?<>
         <li><NavLink to='/dashboard/home'><FaHome></FaHome>Admin Home</NavLink></li>
        <li><NavLink to='/dashboard/allusers'><FaTable></FaTable>Manage user</NavLink></li>
-      <li><NavLink to='/dashboard/payment'><FaWallet></FaWallet>Manage class</NavLink></li>
+      <li><NavLink to='/dashboard/additem'><FaWallet></FaWallet>Manage class</NavLink></li>
+      <li><NavLink to='/dashboard/manageitems'><FaWallet></FaWallet>Manage class</NavLink></li>
         </> 
         :
          <>

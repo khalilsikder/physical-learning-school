@@ -12,6 +12,12 @@ import Instructors from "../Pages/Instructors/Instructors";
 import InstructorsClass from "../Pages/InstructorsClass/InstructorsClass";
 import StudentCart from "../Pages/Dashboard/StudentCart";
 import Allusers from "../Pages/Dashboard/Allusers/Allusers";
+import PrivateRoute from "./PrivateRoute";
+import AddItem from "../Pages/Dashboard/AddItem/AddItem";
+import ManageItems from "../Pages/Dashboard/ManageItems/ManageItems";
+import AdminRoute from "./AdminRoute";
+import Payment from "../Pages/Dashboard/Payment/Payment";
+
 
 
 
@@ -53,7 +59,7 @@ import Allusers from "../Pages/Dashboard/Allusers/Allusers";
     },
     {
     path:'dashboard',
-    element:<Dashboard></Dashboard>,
+    element:<PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
     children:[
       {
         path: 'studentcart',
@@ -62,6 +68,18 @@ import Allusers from "../Pages/Dashboard/Allusers/Allusers";
       {
         path: 'allusers',
        element:<Allusers></Allusers>,
+      },
+      {
+        path:'payment',
+        element:<Payment></Payment>
+      },
+      {
+        path: 'additem',
+        element:<AddItem></AddItem>
+      },
+      {
+        path: 'manageItems',
+      element: <ManageItems></ManageItems>
       }
     ]
     }

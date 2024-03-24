@@ -1,7 +1,9 @@
 
 import Swal from "sweetalert2";
-import useTablecarts from "../../hooks/usetableCarts";
+
 import { FaTrash } from "react-icons/fa";
+import useTablecarts from "../../hooks/useTablecarts";
+import { Link } from "react-router-dom";
 const StudentCart = () => {
   const [cart, refetch] = useTablecarts()
   const total = cart.reduce((sum,item) => item.price + sum, 0)
@@ -21,6 +23,7 @@ const StudentCart = () => {
         })
           .then(res => res.json())
           .then(data => {
+            console.log(data)
             if (data.deletedCount > 0) {
               refetch()
               Swal.fire({
@@ -38,7 +41,7 @@ const StudentCart = () => {
        <div className="uppercase semi-bold flex justify-evenly items-center h-20">
        <h2>Total items : {cart.length}</h2>
         <h3>Total price : $ {total}</h3>
-        <button className="btn btn-xs bg-red-400">Tiny</button>
+        <Link to='/dashboard/payment'><button className="btn btn-xs bg-red-400">pay</button></Link>
        </div>
       
       <div className="overflow-x-auto">
@@ -50,7 +53,6 @@ const StudentCart = () => {
               <th>Classes</th>
               <th>Instructor</th>
               <th>Price</th>
-              <th>Pay</th>
               <th>Action</th>
             </tr>
           </thead>
@@ -74,9 +76,6 @@ const StudentCart = () => {
                 </td>
                 <td>{item.instructorName}</td>
                 <td>${item.price}</td>
-                <td>
-                  <button className="btn btn-ghost btn-xs">Pay</button>
-                </td>
                 <td>
                   <button onClick={() => handleDelete(item)} className="btn btn-ghost btn-sm bg-red-600"><FaTrash className="text-white"></FaTrash></button>
                 </td>

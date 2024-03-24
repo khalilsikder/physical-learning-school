@@ -1,5 +1,6 @@
 
 
+
 const StudentTable = () => {
   
     return (
@@ -27,7 +28,7 @@ const StudentTable = () => {
           <div className="flex items-center gap-3">
             <div className="avatar">
               <div className="mask mask-squircle w-12 h-12">
-                <img src={image} alt="Avatar Tailwind CSS Component" />
+                <img  alt="Avatar Tailwind CSS Component" />
               </div>
             </div>
             <div>
